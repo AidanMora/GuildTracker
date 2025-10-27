@@ -29,6 +29,8 @@ public class Adventurer implements Comparable<Adventurer> {
         return goldEarned;
     }
     public List<Skill> getSkills() {return new ArrayList<>(Skills);}
+    // will create a list of skills that are in the original list, so that this list can be
+    // manipulated withouth changing the original list at all.
 
     public boolean hasSkill(Skill s){ //helper method for the stream filters
         return Skills.contains(s);
@@ -37,12 +39,20 @@ public class Adventurer implements Comparable<Adventurer> {
     public int getSkillCount(){ // another helper method for stream filters I'm going to make later
         return Skills.size();
     }
-    public String toString() {
-        return "This is a toString: " + name + age + role + goldEarned;
-    }
 
     @Override
     public int compareTo(Adventurer o) {
-        return 0;
+        int byName = String.CASE_INSENSITIVE_ORDER.compare(this.name, o.name);
+        return (byName != 0) ? byName : Integer.compare(this.age, o.age);
+        // compare case:
+            // compare this name with other name, not checking for case
+            // if the names are the same, then compare on age
+        // if its like testName, 21 compare -> testName2, 50
+            // then its negative since testName is younger than testName2
+    }
+
+
+    public String toString() {
+        return "This is a toString: " + name + age + role + goldEarned;
     }
 }
