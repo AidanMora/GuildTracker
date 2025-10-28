@@ -1,3 +1,6 @@
+/**
+ * Enum of all skills that could be possibly used
+ */
 public enum Skill {
     INTELLIGENCE,
     BREWING,

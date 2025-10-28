@@ -1,7 +1,9 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Adventurer class
+ */
 public class Adventurer implements Comparable<Adventurer> {
     private final String name;
     private final int age;
@@ -9,6 +11,14 @@ public class Adventurer implements Comparable<Adventurer> {
     private Double goldEarned;
     private final List<Skill> Skills;
 
+    /**
+     * Adventurer constructor
+     * @param name adventurers name
+     * @param age adventurers age
+     * @param role what role (job title) (profession)
+     * @param goldEarned how much money they have in Gold
+     * @param skills list of skills they possess from enum
+     */
     public Adventurer(String name, int age, String role, Double goldEarned, List<Skill> skills) {
         this.name = name;
         this.age = age;
@@ -36,6 +46,11 @@ public class Adventurer implements Comparable<Adventurer> {
     // will create a list of skills that are in the original list, so that this list can be
     // manipulated withouth changing the original list at all.
 
+    /**
+     * helper method to fetch skills to filter easier
+     * @param s skill
+     * @return return what that skill list contains
+     */
     public boolean hasSkill(Skill s){ //helper method for the stream filters
         return Skills.contains(s);
     }
@@ -47,6 +62,16 @@ public class Adventurer implements Comparable<Adventurer> {
     // - Comparator Adventurer using streams -
 
 
+    /**
+     * Logic so comparing adventurer to adventurer can be possible
+     * @param o adventurer object
+     * @return byName is returned as an INT, so if it's less than 0 it means this.name < o.name
+     * 0 means names are equal
+     * > 0 means this.name comes after o.name
+     *
+     * If the name isn't equal to zero it will just give that result
+     * If the name IS equal to zero it will compare the ages to make the comparison
+     */
     @Override
     public int compareTo(Adventurer o) {
         int byName = String.CASE_INSENSITIVE_ORDER.compare(this.name, o.name);
