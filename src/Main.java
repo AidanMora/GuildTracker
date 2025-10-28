@@ -92,7 +92,22 @@ public class Main {
         System.out.println("\n4. Rank Guilds by Average Adventurer Age");
         GuildStreams.rankGuildsAverageAge(guilds)
                 .forEach(System.out::println);
-    }
+
+        System.out.println("\n5. Skill-Wise Adventurer Count Map");
+        GuildStreams.skillCounts(guilds)
+                .forEach((skill, count) -> {
+                    System.out.println(skill + ", " + count);
+                });
+
+
+
+
+
+
+
+
 
     }
+
+}
 
