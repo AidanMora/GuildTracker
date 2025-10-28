@@ -1,4 +1,5 @@
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -18,11 +19,12 @@ public class Main {
         );
         Adventurer Josyan = new Adventurer(
                 "Josyan", 20, "Stable Cleaner", 350.0,
-                Arrays.asList(Skill.HORSEMANSHIP)
+                Arrays.asList(Skill.HORSEMANSHIP, Skill.DISEASE)
         );
         Adventurer Liam = new Adventurer(
                 "Liam", 21, "Gypsy", 1205.0,
-                Arrays.asList(Skill.THIEVERY, Skill.DECEPTION,Skill.FORTUNETELLING, Skill.GEMCRAFTING)
+                Arrays.asList(Skill.THIEVERY, Skill.DECEPTION,Skill.FORTUNETELLING,
+                        Skill.GEMCRAFTING, Skill.DISEASE)
         );
         Adventurer Jodan = new Adventurer(
                 "Jodan", 22, "Nerd", 120.0,
@@ -42,6 +44,14 @@ public class Main {
         );
 
 
+        Guild bottomFeeders = new Guild ("Bottom Feeders",
+                new ArrayList<>(Arrays.asList(Jace, Josyan, Liam)));
+
+        Guild councilOfErmActually = new Guild("Council Of Erm Actually",
+                new ArrayList<>(Arrays.asList(Nathan, Jodan, Quinten)));
+
+        Guild coolGuys = new Guild ("Cool Guys",
+                new  ArrayList<>(Arrays.asList(Aidan, Zack)));
 
     }
 
