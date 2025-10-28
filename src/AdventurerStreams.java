@@ -14,11 +14,15 @@ public final class AdventurerStreams {
                     ));
         }
 
-        //Find adventurer with most skills
-        public static Optional<Adventurer> highestSkillsCount(List<Adventurer> adventurers){
-            return adventurers.stream() // turn into a stream
-                    .max(Comparator//return largest element from this comparison
-                    .comparingInt(a -> a.getSkills().size())); //compare the int of the size of skill list
+        //Find adventurer(s) with most skills
+        public static List<Adventurer> highestSkillsCount(List<Adventurer> adventurers){
+            int highSkillCount = adventurers.stream()
+                    .mapToInt(a -> a.getSkills().size()) // adventurer to skillCount
+                    .max()// find the max
+                    .orElse(0); //but the list COULD be empty so 0
+            return adventurers.stream() //now I can filter who has the highestSkillCount
+                    .filter(a -> a.getSkills().size() == highSkillCount)
+                    .collect(Collectors.toList()); //filter the amount of skills to find adventurers with 'max' skill counts
         }
 
         public static void bonusGoldEvent(List<Adventurer> adventurers){
