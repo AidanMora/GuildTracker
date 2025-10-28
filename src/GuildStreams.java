@@ -44,7 +44,6 @@ public final class GuildStreams {
                 (a, b) -> a, // if the key is a duplicate just keep the first (im pretty sure this doesn''t matter, but java was giving me issues with not having it.
                 () -> new EnumMap <> (Skill.class)
                 // enum map is perfect for this since its for enums
-                //
         ));
     }
 }
