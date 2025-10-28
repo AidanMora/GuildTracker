@@ -60,6 +60,6 @@ public class Adventurer implements Comparable<Adventurer> {
 
 
     public String toString() {
-        return "This is a toString: " + name + age + role + goldEarned;
+        return  name + "| Age: " + age + "| Role: " + role + "| Gold Earned: " + goldEarned;
     }
 }
