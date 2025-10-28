@@ -25,7 +25,7 @@ public class Guild implements Comparable<Guild> {
     }
 
     public String toString(){
-        return "This is a toString: " + name;
+        return "Adventurer: " + name;
     }
 
     public List<Adventurer> getAdventurers() {
