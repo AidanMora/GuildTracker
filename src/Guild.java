@@ -7,7 +7,7 @@ import java.util.List;
  *
  */
 
-public class Guild {
+public class Guild implements Comparable<Guild> {
     private String name;
     private List<Adventurer> adventurers;
 
@@ -30,5 +30,10 @@ public class Guild {
 
     public List<Adventurer> getAdventurers() {
         return adventurers;
+    }
+
+    @Override
+    public int compareTo(Guild o) {
+        return 0;
     }
 }
