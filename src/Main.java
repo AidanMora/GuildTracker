@@ -82,23 +82,26 @@ public class Main {
         System.out.println("\n3. Adventurer(s) With Most Skills");
         List<Adventurer> superSkilled = AdventurerStreams.highestSkillsCount(allAdventurers);
 
-        if (superSkilled.isEmpty()) {
+        if (superSkilled.isEmpty()) { //if the adventurers superSkilled list is empty it prints error message
             System.out.println("No Adventurers (go get some friends) :/ ");
-        } else {
+        } else { //otherwise it will iterate through the list and print each line
             superSkilled.forEach(System.out::println);
         }
 
 
-        System.out.println("\n4. Rank Guilds by Average Adventurer Age");
+        System.out.println("\n4. Rank Guilds by Average Adventurer Age [asc]");
         GuildStreams.rankGuildsAverageAge(guilds)
                 .forEach(System.out::println);
 
         System.out.println("\n5. Skill-Wise Adventurer Count Map");
         GuildStreams.skillCounts(guilds)
-                .forEach((skill, count) -> {
+                .forEach((skill, count) -> { // for each skill, count key value pair in guild stream print out the key-value pair
                     System.out.println(skill + ", " + count);
                 });
 
+        System.out.println("\n6. Bonus Gold Event"); //if the adventurer has less than 1000.0 gold then +20% the gold
+        AdventurerStreams.bonusGoldEvent(allAdventurers);
+        allAdventurers.forEach(System.out::println);
 
 
 
