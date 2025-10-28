@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("~Guild / Skill Tracker~");
+        System.out.println("~Guild / Skill Tracker~\n\n");
 
 
         Adventurer Aidan = new Adventurer(
@@ -87,6 +87,11 @@ public class Main {
         } else {
             superSkilled.forEach(System.out::println);
         }
+
+
+        System.out.println("\n4. Rank Guilds by Average Adventurer Age");
+        GuildStreams.rankGuildsAverageAge(guilds)
+                .forEach(System.out::println);
     }
 
     }
