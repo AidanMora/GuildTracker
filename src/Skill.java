@@ -1,5 +1,5 @@
 public enum Skill {
-    SWORDMANSHIP,
+    SWORDSMANSHIP,
     ARCHERY,
     THIEVERY,
     HORSEMANSHIP,
